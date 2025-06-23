@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.example"
-version = "4.7.1"
+version = "4.7.5"
 
 repositories {
     mavenCentral()
@@ -29,7 +29,7 @@ tasks {
     shadowJar {
         archiveClassifier.set("")
         archiveBaseName.set("velocord")
-        archiveVersion.set("4.7.1")
+        archiveVersion.set("4.7.5")
         
         configurations = listOf(project.configurations.runtimeClasspath.get())
         

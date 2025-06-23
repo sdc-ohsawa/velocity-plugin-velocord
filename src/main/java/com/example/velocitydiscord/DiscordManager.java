@@ -327,21 +327,18 @@ public class DiscordManager extends ListenerAdapter {
                 
                 switch (actionType) {
                     case JOIN:
-                        embed.setAuthor("ログイン");
-                        embed.setTitle(playerName);
-                        embed.setDescription(String.format("**%s**が参加しました", playerName));
+                        embed.setTitle(playerName + " が 参加 しました");
+                        embed.setAuthor("ログイン", null, "https://mc-heads.net/avatar/" + playerName);
                         embed.setColor(Color.GREEN);
                         break;
                     case LEAVE:
-                        embed.setAuthor("ログアウト");
-                        embed.setTitle(playerName);
-                        embed.setDescription(String.format("**%s**が退出しました", playerName));
+                        embed.setTitle(playerName + " が 退出 しました");
+                        embed.setAuthor("ログアウト", null, "https://mc-heads.net/avatar/" + playerName);
                         embed.setColor(Color.RED);
                         break;
                     case MOVE:
-                        embed.setAuthor("サーバー移動");
-                        embed.setTitle(playerName);
-                        embed.setDescription(String.format("**%s**が**%s**から**%s**へ移動しました", playerName, fromServer, toServer));
+                        embed.setTitle(String.format("%s が %s から %s へ移動しました", playerName, fromServer, toServer));
+                        embed.setAuthor("サーバー移動", null, "https://mc-heads.net/avatar/" + playerName);
                         embed.setColor(Color.BLUE);
                         break;
                 }
@@ -376,17 +373,14 @@ public class DiscordManager extends ListenerAdapter {
                 EmbedBuilder embed = new EmbedBuilder();
                 String displayName = configManager.getServerDisplayName(serverName);
                 
-                // 著者情報を設定
-                embed.setAuthor("サーバーステータス");
-                
                 // タイトルを設定
-                embed.setTitle(displayName);
+                embed.setTitle("サーバーステータス");
                 
                 if (isOnline) {
-                    embed.setDescription("オンライン");
+                    embed.setDescription(String.format("**%s**がオンラインになりました", displayName));
                     embed.setColor(Color.GREEN);
                 } else {
-                    embed.setDescription("オフライン");
+                    embed.setDescription(String.format("**%s**がオフラインになりました", displayName));
                     embed.setColor(Color.RED);
                 }
                 

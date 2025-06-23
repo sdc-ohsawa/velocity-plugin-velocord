@@ -84,5 +84,5 @@ account_linking:
 embed:
   # Embedのフッター設定
   footer:
-    text: "Velocord v4.7.1"
+    text: "Velocord v4.7.5"
     icon_url: ""

@@ -185,7 +185,7 @@ public class ConfigManager {
             writer.write("embed:\n");
             writer.write("  # Embedのフッター設定\n");
             writer.write("  footer:\n");
-            writer.write("    text: \"Velocord v4.7.1\"\n");
+            writer.write("    text: \"Velocord v4.7.5\"\n");
             writer.write("    icon_url: \"\"\n");
         }
     }
@@ -551,7 +551,7 @@ public class ConfigManager {
     
     // Embed Footer - Embedフッター設定
     public String getEmbedFooterText() {
-        return get("embed.footer.text", "Velocord v4.7.1");
+        return get("embed.footer.text", "Velocord v4.7.5");
     }
     
     public String getEmbedFooterIconUrl() {
