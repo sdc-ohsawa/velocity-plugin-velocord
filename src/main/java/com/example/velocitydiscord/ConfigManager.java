@@ -152,7 +152,7 @@ public class ConfigManager {
             writer.write("    password: \"password\"\n");
             writer.write("    connection_pool_size: 10\n");
             writer.write("  sqlite:\n");
-            writer.write("    file: \"plugins/velocity-discord/accounts.db\"\n\n");
+            writer.write("    file: \"plugins/velocord/accounts.db\"\n\n");
             
             // アカウント連携設定
             writer.write("account_linking:\n");
@@ -179,7 +179,14 @@ public class ConfigManager {
             writer.write("  # サーバーへの接続タイムアウト時間（ミリ秒）\n");
             writer.write("  ping-timeout: 3000\n");
             writer.write("  # サーバー状態通知専用のDiscordチャンネルID（空の場合は通常のチャンネルを使用）\n");
-            writer.write("  discord-channel: \"\"\n");
+            writer.write("  discord-channel: \"\"\n\n");
+            
+            // Embed設定
+            writer.write("embed:\n");
+            writer.write("  # Embedのフッター設定\n");
+            writer.write("  footer:\n");
+            writer.write("    text: \"Velocord v4.7.1\"\n");
+            writer.write("    icon_url: \"\"\n");
         }
     }
 
@@ -540,5 +547,14 @@ public class ConfigManager {
     
     public String getServerOfflineMessage() {
         return get("messages.server_offline", "🔴 **%server%** server is offline");
+    }
+    
+    // Embed Footer - Embedフッター設定
+    public String getEmbedFooterText() {
+        return get("embed.footer.text", "Velocord v4.7.1");
+    }
+    
+    public String getEmbedFooterIconUrl() {
+        return get("embed.footer.icon_url", "");
     }
 } 

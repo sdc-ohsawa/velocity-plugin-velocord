@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
+import java.time.Instant;
 
 public class DiscordManager extends ListenerAdapter {
     
@@ -326,17 +327,35 @@ public class DiscordManager extends ListenerAdapter {
                 
                 switch (actionType) {
                     case JOIN:
-                        embed.setDescription(String.format("**%s** joined the server", playerName));
+                        embed.setAuthor("ログイン");
+                        embed.setTitle(playerName);
+                        embed.setDescription(String.format("**%s**が参加しました", playerName));
                         embed.setColor(Color.GREEN);
                         break;
                     case LEAVE:
-                        embed.setDescription(String.format("**%s** left the server", playerName));
+                        embed.setAuthor("ログアウト");
+                        embed.setTitle(playerName);
+                        embed.setDescription(String.format("**%s**が退出しました", playerName));
                         embed.setColor(Color.RED);
                         break;
                     case MOVE:
-                        embed.setDescription(String.format("**%s**が**%s**から**%s**に移動しました", playerName, fromServer, toServer));
+                        embed.setAuthor("サーバー移動");
+                        embed.setTitle(playerName);
+                        embed.setDescription(String.format("**%s**が**%s**から**%s**へ移動しました", playerName, fromServer, toServer));
                         embed.setColor(Color.BLUE);
                         break;
+                }
+                
+                // タイムスタンプを追加
+                embed.setTimestamp(Instant.now());
+                
+                // フッターを設定
+                String footerText = configManager.getEmbedFooterText();
+                String footerIconUrl = configManager.getEmbedFooterIconUrl();
+                if (footerIconUrl != null && !footerIconUrl.isEmpty()) {
+                    embed.setFooter(footerText, footerIconUrl);
+                } else {
+                    embed.setFooter(footerText);
                 }
                 
                 sendEmbedToAllChannels(embed);
@@ -357,12 +376,30 @@ public class DiscordManager extends ListenerAdapter {
                 EmbedBuilder embed = new EmbedBuilder();
                 String displayName = configManager.getServerDisplayName(serverName);
                 
+                // 著者情報を設定
+                embed.setAuthor("サーバーステータス");
+                
+                // タイトルを設定
+                embed.setTitle(displayName);
+                
                 if (isOnline) {
-                    embed.setDescription(String.format("**%s** server is online", displayName));
+                    embed.setDescription("オンライン");
                     embed.setColor(Color.GREEN);
                 } else {
-                    embed.setDescription(String.format("**%s** server is offline", displayName));
+                    embed.setDescription("オフライン");
                     embed.setColor(Color.RED);
+                }
+                
+                // タイムスタンプを追加
+                embed.setTimestamp(Instant.now());
+                
+                // フッターを設定
+                String footerText = configManager.getEmbedFooterText();
+                String footerIconUrl = configManager.getEmbedFooterIconUrl();
+                if (footerIconUrl != null && !footerIconUrl.isEmpty()) {
+                    embed.setFooter(footerText, footerIconUrl);
+                } else {
+                    embed.setFooter(footerText);
                 }
                 
                 // サーバー状態監視専用のチャンネルがあるかチェック

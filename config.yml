@@ -78,4 +78,11 @@ account_linking:
     &cこのサーバーを利用するにはDiscord連携が必要です
     &eあなたの認証コード: &b%code%
     &7Discordで /link %code% を実行してください
-    &7連携完了後、再度接続してください 
+    &7連携完了後、再度接続してください
+
+# Embed設定
+embed:
+  # Embedのフッター設定
+  footer:
+    text: "Velocord v4.7.1"
+    icon_url: ""

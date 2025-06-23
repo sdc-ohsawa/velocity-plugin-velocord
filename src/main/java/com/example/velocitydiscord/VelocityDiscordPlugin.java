@@ -29,7 +29,7 @@ import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 @Plugin(
     id = "velocord",
     name = "Velocord",
-    version = "4.7.0",
+    version = "4.7.1",
     description = "MinecraftとDiscordを繋ぐ統合チャット・連携プラグイン",
     authors = {"comugi"}
 )
