@@ -21,7 +21,7 @@ MinecraftサーバーとDiscordサーバーを連携し、チャット統合・�
 
 ## 📥 ダウンロード
 
-[**最新版をダウンロード**](https://github.com/sdc-ohsawa/velocity-plugin-velocord/releases) → `velocord-4.7.0.jar`
+[**最新版をダウンロード**](https://github.com/sdc-ohsawa/velocity-plugin-velocord/releases)
 
 ---
 
