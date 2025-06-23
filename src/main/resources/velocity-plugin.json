@@ -1,0 +1,9 @@
+{
+  "id": "velocord",
+  "name": "Velocord",
+  "version": "4.7.0",
+  "description": "MinecraftとDiscordを繋ぐ統合チャット・連携プラグイン",
+  "authors": ["comugi"],
+  "dependencies": [],
+  "main": "com.example.velocitydiscord.VelocityDiscordPlugin"
+} 

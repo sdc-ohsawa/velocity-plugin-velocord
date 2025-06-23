@@ -1,0 +1,81 @@
+# Velocity Discord Plugin Configuration
+
+discord:
+  # Discord Bot Token
+  token: "YOUR_DISCORD_BOT_TOKEN"
+  
+  # Guild ID自動検出機能（trueの場合、参加しているサーバーを自動検出）
+  auto_guild_detection: true
+  
+  # 複数のDiscordサーバー設定
+  # auto_guild_detectionがtrueの場合、参加しているサーバーが自動追加されます
+  guilds: {}
+    # 手動設定例:
+    # "1234567890123456789":
+    #   name: "メインサーバー"
+    #   channel_id: "YOUR_CHANNEL_ID"
+    #   webhookUrl: "YOUR_WEBHOOK_URL"
+    #   enabled: true
+
+chat:
+  format: "&7[&a%server%&7] &f%player%&7: &f%message%"
+  discord_format: "**[%server%]** %player%: %message%"
+  discord_to_game_enabled: true
+  discord_to_game_format: "&9[Discord] &b%player%&7: &f%message%"
+  game_to_discord_enabled: true
+
+permissions:
+  # ロール権限設定（手動設定が必要）
+  # auto_guild_detectionによりサーバーが自動検出されますが、
+  # ロール設定は手動で行ってください
+  discordRoleMapping: {}
+    # 手動設定例:
+    # "1234567890123456789": # Guild ID
+    #   roles:
+    #     "1111111111111111111": # Role ID
+    #       name: "管理者"
+    #       serverAccess:
+    #         seikatsu: true
+    #         sigen: true
+    #         lobby: true
+    #         vip: true
+    #     "2222222222222222222": # Role ID
+    #       name: "一般メンバー"
+    #       serverAccess:
+    #         seikatsu: true
+    #         sigen: true
+    #         lobby: false
+    #         vip: false
+
+servers:
+  seikatsu: "生存サーバー"
+  sigen: "資源サーバー"
+  lobby: "ロビーサーバー"
+  vip: "VIPサーバー"
+
+database:
+  type: "sqlite"
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "velocity_discord"
+    username: "root"
+    password: "password"
+    connection_pool_size: 10
+  sqlite:
+    file: "plugins/velocity-discord/accounts.db"
+
+account_linking:
+  enabled: true
+  required: true
+  command_prefix: "!link"
+  verification_timeout: 10
+  success_message: "&aアカウントの連携が完了しました！"
+  failure_message: "&cアカウントの連携に失敗しました。"
+  already_linked_message: "&eこのアカウントは既に連携されています。"
+  unlink_message: "&aアカウントの連携を解除しました。"
+  connection_denied_message: |
+    &cこのサーバーを利用するにはDiscord連携が必要です
+    &eあなたの認証コード: &b%code%
+    &7Discordで /link %code% を実行してください
+    &7連携完了後、再度接続してください 

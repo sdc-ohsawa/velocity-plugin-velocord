@@ -1,0 +1,73 @@
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Eclipse
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+
+# VS Code
+.vscode/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Log files
+*.log
+
+# Package Files
+*.tar.gz
+*.rar
+*.zip
+
+# virtual machine crash logs
+hs_err_pid*
+
+# Dependency directories
+node_modules/
+
+# Local configuration
+config.local.yml
+*.local.* 
