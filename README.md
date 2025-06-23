@@ -2,13 +2,13 @@
 
 MinecraftのVelocityプロキシサーバー用のDiscord連携プラグインです。Discord連携、サーバー統合チャット、Discordロールに基づく権限管理、アカウント連携システム、自動Discord サーバー検出機能、サーバー状態監視機能を提供します。
 
-[![Build Status](https://github.com/sdc-ohsawa/velocity-discordlinking/workflows/Build%20and%20Release/badge.svg)](https://github.com/sdc-ohsawa/velocity-discordlinking/actions)
+[![Build Status](https://github.com/sdc-ohsawa/velocity-plugin-velocord/workflows/Build%20and%20Release/badge.svg)](https://github.com/sdc-ohsawa/velocity-plugin-velocord/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/github/v/release/sdc-ohsawa/velocity-discordlinking)](https://github.com/sdc-ohsawa/velocity-discordlinking/releases)
+[![Version](https://img.shields.io/github/v/release/sdc-ohsawa/velocity-plugin-velocord)](https://github.com/sdc-ohsawa/velocity-plugin-velocord/releases)
 
 ## 📥 ダウンロード
 
-最新版は [Releases](https://github.com/sdc-ohsawa/velocity-discordlinking/releases) ページからダウンロードできます。
+最新版は [Releases](https://github.com/sdc-ohsawa/velocity-plugin-velocord/releases) ページからダウンロードできます。
 
 ## 🚀 機能
 
@@ -62,7 +62,7 @@ MinecraftのVelocityプロキシサーバー用のDiscord連携プラグイン�
 
 ### 1. プラグインのインストール
 
-1. [Releases](https://github.com/sdc-ohsawa/velocity-discordlinking/releases) から最新版（v4.7.0）をダウンロード
+1. [Releases](https://github.com/sdc-ohsawa/velocity-plugin-velocord/releases) から最新版（v4.7.0）をダウンロード
 2. VelocityサーバーのPluginsディレクトリに配置
 3. サーバーを再起動
 
@@ -308,8 +308,8 @@ server-status:
 
 ### ビルド
 ```bash
-git clone https://github.com/sdc-ohsawa/velocity-discordlinking.git
-cd velocity-discordlinking
+git clone https://github.com/sdc-ohsawa/velocity-plugin-velocord.git
+cd velocity-plugin-velocord
 ./gradlew clean shadowJar
 ```
 
@@ -330,7 +330,7 @@ cd velocity-discordlinking
 
 ## 🐛 サポート
 
-問題や質問がある場合は、[GitHubのIssues](https://github.com/sdc-ohsawa/velocity-discordlinking/issues)ページで報告してください。
+問題や質問がある場合は、[GitHubのIssues](https://github.com/sdc-ohsawa/velocity-plugin-velocord/issues)ページで報告してください。
 
 ## 🤝 貢献
 
